@@ -16,5 +16,9 @@ ln -s .dotfiles/nvim/.config ~/.config
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 	 ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
+python3 -m venv pylsp
+. ./pylsp/bin/activate
+pip install --upgrade pip
+pip install python-lsp-server[all]
 echo "scl enable devtoolset-8 bash"
 echo "nvim/AppRun --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'"
